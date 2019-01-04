@@ -24,14 +24,8 @@ public class Client {
             System.out.println("닉네임을 입력하세요.");
             String nickName = br.readLine();
             chatUser.setNickname(nickName);
-            
-            // 방 메뉴들을 예쁘게 정리했습니다.
+            chatUser.write(nickName);
 
-            System.out.println("명령어를 입력 하세요.");
-            System.out.println("1. /create + 방제목");
-            System.out.println("2. /join");
-            System.out.println("3. /roomlist");
-            System.out.println("4. /quit");
             Thread t = new Thread(new ClientHandler(chatUser));
             t.start();
 
